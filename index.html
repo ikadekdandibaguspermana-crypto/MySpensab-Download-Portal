@@ -3,52 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#091126">
+  <meta name="theme-color" content="#f4f7ff">
   <meta name="description" content="Pasang MySpensab di Android, iPhone, PC Windows, atau MacBook.">
   <title>Unduh MySpensab</title>
-  <style>
-    :root{color-scheme:dark;--bg:#081022;--surface:#121e3e;--surface2:#192950;--border:#30436e;--text:#f5f7ff;--muted:#acbadb;--gold:#f3cb62;--blue:#4d7ef1;--mint:#6bd6c4}
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 12% 0,#1a2b53 0,transparent 43%),radial-gradient(ellipse at 100% 100%,#17264b 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
-    .wrap{width:min(1040px,calc(100% - 32px));margin:auto;padding:28px 0 44px}header{display:flex;align-items:center;justify-content:space-between;gap:14px}
-    .brand{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:800;text-decoration:none}.brand img{width:44px;height:44px;object-fit:contain;border-radius:13px;background:#fff;padding:4px}.open-app{color:#dce5ff;text-decoration:none;font-size:14px}
-    .hero{text-align:center;max-width:700px;margin:62px auto 32px}.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border:1px solid #405783;border-radius:999px;background:#111e3b;color:#dce5ff;font-size:13px}.light{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}
-    h1{font-size:clamp(36px,7vw,58px);line-height:1.08;letter-spacing:-.045em;margin:19px 0 13px}.hero p{color:var(--muted);font-size:17px;margin:0}
-    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{position:relative;display:flex;flex-direction:column;min-height:285px;padding:20px 17px;border:1px solid var(--border);border-radius:21px;background:linear-gradient(155deg,rgba(25,40,79,.97),rgba(14,22,44,.98));box-shadow:0 18px 45px #0003}.card.recommended{border-color:#7693e6;box-shadow:0 0 0 1px #7693e655,0 18px 45px #0003}
-    .tag{position:absolute;right:12px;top:12px;padding:4px 8px;border-radius:999px;background:#2a4075;color:white;font-size:10px;font-weight:750}.icon{width:52px;height:52px;display:grid;place-items:center;border-radius:15px;background:#293c69;margin:0 0 13px}.icon svg{width:27px;height:27px;fill:currentColor}h2{font-size:19px;margin:0 0 3px}.sub{color:var(--muted);font-size:13px;margin:0 0 13px}.steps{padding-left:18px;margin:0 0 15px;color:#d7e0f5;font-size:12.5px}.steps li+li{margin-top:4px}
-    button,.cta{display:flex;align-items:center;justify-content:center;margin-top:auto;min-height:43px;padding:9px 12px;border:1px solid #49649d;border-radius:12px;background:#24375f;color:#fff;font:700 13px system-ui,sans-serif;text-align:center;text-decoration:none;cursor:pointer}.cta.primary{background:var(--blue);border-color:var(--blue);box-shadow:0 7px 18px #416ee54a}.cta:hover,button:hover{filter:brightness(1.12)}
-    .notice{margin:20px 0 0;padding:15px 17px;border:1px solid #435681;border-radius:15px;background:#111b35;color:#dbe4f8;font-size:13px}.notice strong{color:var(--gold)}.guide{display:none;margin-top:18px;padding:18px 20px;border:1px solid #627dbc;border-radius:17px;background:#142142}.guide.show{display:block}.guide h2{margin:0 0 8px}.guide p{margin:7px 0;color:var(--muted)}.guide ol{margin:7px 0 0;padding-left:22px}.guide li+li{margin-top:4px}.guide a{color:#fff}
-    footer{text-align:center;color:#8594b6;font-size:12px;margin-top:25px}
-    @media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:520px){.wrap{width:calc(100% - 22px);padding-top:15px}.hero{margin:38px auto 23px}.hero p{font-size:15px}.grid{grid-template-columns:1fr}.card{min-height:0;padding:17px}.steps{margin-bottom:14px}.brand{font-size:18px}.brand img{width:40px;height:40px}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="wrap">
-    <header>
+    <header data-edit-block="header">
       <a class="brand" href="https://spensabcerdas.netlify.app/">
         <img src="https://spensabcerdas.netlify.app/asset/spensablogo.png" alt="">
         <span>MySpensab</span>
       </a>
-      <a class="open-app" href="https://spensabcerdas.netlify.app/">Buka aplikasi ↗</a>
+      <nav class="header-actions" aria-label="Menu situs">
+        <button class="design-toggle" id="openDesigner" type="button" aria-haspopup="dialog">✦ <span>Desain situs</span></button>
+        <a class="open-app" href="https://spensabcerdas.netlify.app/">Kunjungi MySpensab <span aria-hidden="true">↗</span></a>
+      </nav>
     </header>
-    <section class="hero">
-      <span class="pill"><span class="light"></span> Portal pemasangan resmi</span>
-      <h1>MySpensab di perangkatmu</h1>
-      <p>Pilih perangkat. Untuk Windows tersedia installer langsung; perangkat lain memasang MySpensab sebagai aplikasi web.</p>
+    <section class="hero" data-edit-block="hero">
+      <span class="pill"><span class="light"></span> Satu ruang belajar, semua perangkat</span>
+      <h1>MySpensab,<br><span>siap di perangkatmu.</span></h1>
+      <p>Pilih perangkatmu dan ikuti langkah sederhana untuk mulai menggunakan MySpensab.</p>
     </section>
-    <section class="grid" aria-label="Pilih perangkat">
+    <section class="grid" aria-label="Pilih perangkat" data-edit-block="devices">
       <article class="card" data-platform="android">
         <span class="tag" hidden>Perangkatmu</span>
         <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.1 8.2 5.6 5.6a.6.6 0 0 1 1-.6l1.6 2.7a9 9 0 0 1 7.6 0l1.6-2.7a.6.6 0 1 1 1 .6l-1.5 2.6A8.2 8.2 0 0 1 21 14H3a8.2 8.2 0 0 1 4.1-5.8ZM7 11a.8.8 0 1 0 0 1.6A.8.8 0 0 0 7 11Zm10 0a.8.8 0 1 0 0 1.6.8.8 0 0 0 0-1.6ZM5 15h14v4a2 2 0 0 1-2 2h-1v2h-2v-2h-4v2H8v-2H7a2 2 0 0 1-2-2v-4Z"/></svg></div>
         <h2>Android</h2><p class="sub">HP dan tablet</p><ol class="steps"><li>Buka aplikasi di Chrome.</li><li>Pilih Instal aplikasi dari menu browser.</li></ol>
-        <button class="cta primary" data-open="android">Buka untuk Android</button>
+        <button class="cta" data-open="android">Panduan Android</button>
       </article>
       <article class="card" data-platform="windows">
         <span class="tag" hidden>Perangkatmu</span>
         <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 4.8 10.7 3.6v8H2V4.8Zm10.2-1.4L22 2v9.6h-9.8V3.4ZM2 12.8h8.7v8L2 19.6v-6.8Zm10.2 0H22v9.6l-9.8-1.4v-8.2Z"/></svg></div>
         <h2>PC Windows</h2><p class="sub">Komputer dan laptop</p><ol class="steps"><li>Unduh installer MySpensab untuk Windows.</li><li>Buka file yang selesai diunduh untuk memasang aplikasi.</li></ol>
-        <a class="cta" href="https://github.com/ikadekdandibaguspermana-crypto/App-download-web-MySpensab/releases/latest/download/MySpensab-Setup.exe" download>Download MySpensab</a>
+        <a class="cta primary" href="https://github.com/ikadekdandibaguspermana-crypto/App-download-web-MySpensab/releases/latest/download/MySpensab-Setup.exe" download>Download MySpensab</a>
       </article>
       <article class="card" data-platform="mac">
         <span class="tag" hidden>Perangkatmu</span>
@@ -63,30 +51,18 @@
         <button class="cta" data-open="ios">Buka untuk iPhone</button>
       </article>
     </section>
-    <section class="notice"><strong>Catatan:</strong> Installer Windows diunduh langsung dari rilis MySpensab. APK Android, DMG Mac, dan IPA iPhone belum tersedia; gunakan pemasangan aplikasi web di perangkat tersebut.</section>
-    <section class="guide" id="guide" aria-live="polite"><h2 id="guide-title">Cara pemasangan</h2><div id="guide-copy"></div></section>
-    <footer>MySpensab · Cerdas • Berbudaya • Berkarakter • Berprestasi</footer>
+    <section class="notice" data-edit-block="notice"><strong>Catatan:</strong> Installer Windows diunduh langsung dari rilis MySpensab. APK Android, DMG Mac, dan IPA iPhone belum tersedia; gunakan pemasangan aplikasi web di perangkat tersebut.</section>
+    <section class="guide" id="guide" aria-live="polite" data-edit-block="guide"><h2 id="guide-title">Cara pemasangan</h2><div id="guide-copy"></div></section>
+    <footer data-edit-block="footer">MySpensab · Cerdas • Berbudaya • Berkarakter • Berprestasi</footer>
   </main>
-  <script>
-    (() => {
-      const appUrl = 'https://spensabcerdas.netlify.app/';
-      const ua = navigator.userAgent || '';
-      const plat = navigator.userAgentData?.platform || navigator.platform || '';
-      const kind = /iPhone|iPad|iPod/i.test(ua) || (/Mac/i.test(plat) && navigator.maxTouchPoints > 1) ? 'ios' : /Android/i.test(ua) ? 'android' : /Mac/i.test(plat) ? 'mac' : /Win/i.test(plat) ? 'windows' : '';
-      if (kind) { const card = document.querySelector(`[data-platform="${kind}"]`); if (card) { card.classList.add('recommended'); card.querySelector('.tag').hidden = false; } }
-      const texts = {
-        android: 'Di Chrome, buka menu ⋮ lalu pilih “Instal aplikasi” atau “Tambahkan ke layar utama”.',
-        windows: 'Di Chrome atau Edge, buka menu browser lalu pilih “Instal MySpensab”.',
-        mac: 'Di Chrome atau Edge, buka menu browser dan pilih opsi instal aplikasi. Safari dapat menawarkan “Add to Dock”.',
-        ios: 'Pastikan halaman terbuka di Safari. Tekan Bagikan, pilih “Tambahkan ke Layar Utama”, lalu tekan Tambahkan.'
-      };
-      document.querySelectorAll('[data-open]').forEach(button => button.addEventListener('click', () => {
-        const target = button.dataset.open;
-        document.getElementById('guide-title').textContent = `Cara memasang di ${target === 'ios' ? 'iPhone' : target === 'mac' ? 'MacBook' : target === 'windows' ? 'PC Windows' : 'Android'}`;
-        document.getElementById('guide-copy').innerHTML = `<p>${texts[target]}</p><p><a class="cta primary" href="${appUrl}?pasang=1" target="_blank" rel="noopener">Pasang MySpensab ↗</a></p>`;
-        const guide = document.getElementById('guide'); guide.classList.add('show'); guide.scrollIntoView({behavior:'smooth',block:'center'});
-      }));
-    })();
-  </script>
+  <dialog class="designer" id="designDialog" aria-labelledby="designerTitle">
+    <div class="designer-head"><div><span class="designer-kicker">MODE EDITOR</span><h2 id="designerTitle">Rancang halamanmu</h2></div><button class="icon-button" id="closeDesigner" type="button" aria-label="Tutup editor">×</button></div>
+    <p class="designer-intro">Pilih wallpaper, atur warna, dan susun blok halaman. Perubahan tersimpan di browser ini.</p>
+    <section class="editor-section"><div class="editor-label"><h3>10 wallpaper</h3><span>pilih suasana</span></div><div class="theme-grid" id="themeChoices"></div></section>
+    <section class="editor-section"><div class="editor-label"><h3>Warna sendiri</h3><span>langsung terlihat</span></div><div class="color-controls"><label>Warna latar<input id="customBackground" type="color" value="#f4f7ff"></label><label>Warna aksen<input id="customAccent" type="color" value="#526ae6"></label></div><label class="upload-control">Tambahkan gambar wallpaper<input id="wallpaperUpload" type="file" accept="image/png,image/jpeg,image/webp"></label></section>
+    <section class="editor-section"><div class="editor-label"><h3>Susunan blok</h3><span>seret atau pakai tombol</span></div><div id="blockList" class="block-list"></div><button class="add-image-block" id="addImageBlock" type="button">＋ Tambahkan blok gambar</button><input id="blockImageUpload" type="file" accept="image/png,image/jpeg,image/webp" hidden></section>
+    <div class="designer-foot"><button id="resetDesign" type="button" class="reset-design">Pulihkan desain awal</button><span id="saveStatus" role="status">Tersimpan otomatis</span></div>
+  </dialog>
+  <script src="script.js" defer></script>
 </body>
 </html>
